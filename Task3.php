@@ -6,7 +6,9 @@ class Task3
 {
     public static function main(int $number): int
     {
-        $number = abs($number);
+        if ($number < 0 || strlen($number) < 2) {
+            throw new \InvalidArgumentException('Wrong number was written as argument. Number must be positive and contain more than 2 characters');
+        }
         $sum = 0;
         while ($number > 0) {
             $sum += ($number % 10);
