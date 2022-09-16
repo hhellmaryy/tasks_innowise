@@ -19,7 +19,7 @@ class Task9
             $secondEl = $arr[$i + 1];
             $thirdEl = $arr[$i + 2];
             if ($firstEl + $secondEl + $thirdEl === $number) {
-                $result[] = [$firstEl, $secondEl, $thirdEl];
+                $result[] = $firstEl.'+'.$secondEl.'+'.$thirdEl.'='.$number;
                 $isFound = true;
             }
         }
