@@ -6,7 +6,7 @@ class Task12
 {
     private int $a;
     private int $b;
-    private ?float $result;
+    private ?int $result;
     public function __construct(int $a, int $b)
     {
         $this->a = $a;
