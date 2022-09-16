@@ -6,10 +6,11 @@ class Task8
 {
     public static function main(string $json): string
     {
-        if (json_decode($json, true) === null) {
+        $arr = json_decode($json, true);
+        if (json_last_error() !== JSON_ERROR_NONE || strpos($json, '{') === false) {
             throw new \InvalidArgumentException('String is not json. Your string is: '.$json);
         }
-        $arr = json_decode($json, true);
+        var_dump($arr);
         $str = '';
         foreach ($arr as $key => $value) {
             if (is_array($value)) {
@@ -20,6 +21,6 @@ class Task8
             }
         }
 
-        return $str;
+        return trim($str);
     }
 }
